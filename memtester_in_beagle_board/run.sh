@@ -11,8 +11,9 @@ tar zxvf memtester-4.3.0.tar.gz
 cd memtester-4.3.0
 
 #set compiler
-sed 's/cc/gcc/' conf-*
-
+for file in conf-*; do
+	sed 's/cc/gcc/' $file > $file
+end
 #build
 make
 
